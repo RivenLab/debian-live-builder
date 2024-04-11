@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# build.sh by Ian LeCorbeau.
+# build.sh by RivenLab
 # Builds custom Debian iso.
 # IMPORTANT: this script should never be run as root.
 # Only the lb clean and lb build commands require root privileges.
