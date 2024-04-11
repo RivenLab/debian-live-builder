@@ -24,7 +24,7 @@ cd .build/deb-live
 ```
 **Simple Config command (example)**
 ```
-lb config -d bookworm --debian-installer none --archive-areas "main contrib non-free" --debootstrap-options "--variant=minbase"
+lb config -d bookworm --debian-installer none --archive-areas "main contrib non-free non-free-firmware" --debootstrap-options "--variant=minbase"
 ```
 
 **Copy all files and configs**
