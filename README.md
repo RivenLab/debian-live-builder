@@ -12,7 +12,7 @@ sudo apt install live-build git
 mkdir -p .local/src
 cd .local/src
 git clone git@github.com:RivenLab/debian-live-builder.git
-cd debian-live-build
+cd debian-live-builder
 chmod u+x build.sh
 cd ~
 ```
@@ -30,7 +30,7 @@ lb config -d bookworm --debian-installer none --archive-areas "main contrib non-
 **Copy all files and configs**
 ```
 cd ~
-.local/src/debian-live-build/deploy.sh  
+.local/src/debian-live-builder/build.sh  
 ```
 **Build iso**
 ```
