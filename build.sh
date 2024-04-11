@@ -9,7 +9,7 @@
 
 BUILDER=RivenLab
 FLAVOUR=bookworm
-REPODIR="$HOME"/.local/src/debian-live-build/config
+REPODIR="$HOME"/.local/src/debian-live-builder/config
 WORKDIR="$HOME"/.build/deb-dragon-live
 
 mk_dir() {
@@ -24,7 +24,7 @@ conf() {
 		--iso-publisher "$BUILDER" \
 		--checksums sha512 \
 		--image-name deb-dragon-live-"$(date +"%Y%m%d")" \
-		--archive-areas "main contrib non-free" \
+		--archive-areas "main contrib non-free non-free-firmware" \
 		--debootstrap-options "--variant=minbase" \
 		--bootappend-live "boot=live slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on randomize_kstack_offset=on vsyscall=none debugfs=off lockdown=confidentiality"
 }
@@ -55,7 +55,7 @@ do_rebuild() {
 }
 
 gen_sums_sig() {
-	local _isoname=deb-dragon-live-"$(date +"%Y%m%d")"-amd64.hybrid.iso
+	local _isoname=deb-dragon-live-"$(date +"%Y%m%d")"-amd64.iso
 
 	cd "$WORKDIR" || exit
 	touch checksums-"$_isoname".txt
