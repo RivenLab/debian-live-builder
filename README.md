@@ -11,7 +11,7 @@ sudo apt install live-build git
 ```
 mkdir -p .local/src
 cd .local/src
-git clone _repo_
+git clone git@github.com:RivenLab/debian-live-builder.git
 cd debian-live-build
 chmod u+x build.sh
 cd ~
