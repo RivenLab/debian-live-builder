@@ -27,8 +27,7 @@ sensible-utils
 udev
 tzdata
 mandoc
-vim
-tmux
 eject
 git
 build-essential
+iputils-ping

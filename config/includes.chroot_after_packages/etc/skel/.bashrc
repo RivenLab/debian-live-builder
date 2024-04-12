@@ -111,10 +111,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-export PATH=$PATH:.local/bin:/sbin:/usr/sbin:/usr/local/sbin
-
-export EDITOR=nano
-export VISUAL=nano
-
-set -o vi

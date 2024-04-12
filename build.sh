@@ -4,8 +4,6 @@
 # Builds custom Debian iso.
 # IMPORTANT: this script should never be run as root.
 # Only the lb clean and lb build commands require root privileges.
-# By default, doas is called from the script. If sudo is installed instead,
-# replace /usr/bin/sudo with /usr/bin/sudo in the do_build() and do_rebuild() functions.
 
 BUILDER=RivenLab
 FLAVOUR=bookworm
@@ -26,7 +24,10 @@ conf() {
 		--image-name deb-dragon-live-"$(date +"%Y%m%d")" \
 		--archive-areas "main contrib non-free non-free-firmware" \
 		--debootstrap-options "--variant=minbase" \
-		--bootappend-live "boot=live slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on randomize_kstack_offset=on vsyscall=none debugfs=off lockdown=confidentiality"
+		--bootappend-live "\
+		 boot=live username=dragon keyboard-layouts=fr,fr locales=en_US.UTF-8 timezone=Europe/Paris \
+		 slab_nomerge init_on_alloc=1 init_on_free=1 page_alloc.shuffle=1 pti=on randomize_kstack_offset=on vsyscall=none debugfs=off lockdown=confidentiality \
+		 "
 }
 
 copy_files() {
@@ -55,7 +56,7 @@ do_rebuild() {
 }
 
 gen_sums_sig() {
-	local _isoname=deb-dragon-live-"$(date +"%Y%m%d")"-amd64.iso
+	local _isoname=deb-dragon-live-"$(date +"%Y%m%d")"-hybrid-amd64.iso
 
 	cd "$WORKDIR" || exit
 	touch checksums-"$_isoname".txt
