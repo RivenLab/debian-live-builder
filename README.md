@@ -1,4 +1,4 @@
-# debian-live-builder
+# Debian-live-builder !BOOKWORM!
 
 ## Usage
 
@@ -10,30 +10,19 @@ sudo apt install live-build git
 **Create dir & Clone repo**
 ```
 mkdir -p .local/src
+mkdir .build/
 cd .local/src
 git clone git@github.com:RivenLab/debian-live-builder.git
 cd debian-live-builder
 chmod u+x build.sh
 cd ~
 ```
-
-**Make Work Dirs**
+---
+**Build ISO : Execute The Script**
 ```
-mkdir .build/deb-live -p
-cd .build/deb-live
-```
-**Simple Config command (example)**
-```
-lb config -d bookworm --debian-installer none --archive-areas "main contrib non-free non-free-firmware" --debootstrap-options "--variant=minbase"
-```
-
-**Copy all files and configs**
-```
-cd ~
 .local/src/debian-live-builder/build.sh  
 ```
-**Build iso**
+**Iso Location**
 ```
-cd .build/deb-live  
-sudo lb build  
+cd .build/deb-dragon-live
 ```
