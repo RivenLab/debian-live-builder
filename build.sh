@@ -7,8 +7,8 @@
 
 BUILDER=RivenLab
 FLAVOUR=bookworm
-REPODIR="$HOME"/.local/src/debian-live-builder/config
-WORKDIR="$HOME"/.build/deb-dragon-live
+REPODIR="$HOME"/debian-live-builder/config
+WORKDIR="$HOME"/build/deb-dragon-live
 
 mk_dir() {
 	mkdir -p "$WORKDIR"
