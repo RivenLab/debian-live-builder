@@ -7,10 +7,9 @@
 sudo apt install live-build git
 ```
 
-**Create dir & Clone repo**
+**Clone repo**
 ```
 cd ~
-mkdir build/
 git clone https://github.com/RivenLab/debian-live-builder.git
 chmod u+x debian-live-builder/build.sh
 ```
