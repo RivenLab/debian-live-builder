@@ -9,20 +9,17 @@ sudo apt install live-build git
 
 **Create dir & Clone repo**
 ```
-mkdir -p .local/src
-mkdir .build/
-cd .local/src
-git clone https://github.com/RivenLab/debian-live-builder.git
-cd debian-live-builder
-chmod u+x build.sh
 cd ~
+mkdir build/
+git clone https://github.com/RivenLab/debian-live-builder.git
+chmod u+x debian-live-builder/build.sh
 ```
 ---
 **Build ISO : Execute The Script**
 ```
-.local/src/debian-live-builder/build.sh  
+./debian-live-builder/build.sh  
 ```
 **Iso Location**
 ```
-cd .build/deb-dragon-live
+cd ./build/deb-dragon-live
 ```
